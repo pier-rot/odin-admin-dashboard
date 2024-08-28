@@ -96,11 +96,81 @@ aside {
 header {
   grid-area: header;
   display: flex;
+  padding: 1rem 2rem;
+  align-items: center;
+  &>#search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    &>p {
+      display: inline;
+    }
+
+    &>input {
+      margin-left: 1rem;
+      flex: 1;
+      border: none;
+      background-color: rgb(198, 228, 228);
+      border-radius: 1rem;
+      margin-right: 4rem;
+    }
+  }
+
+  &>#profile {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    /* background-color: grey; */
+    border-radius: 2rem;
+    border: solid grey 3px;
+    padding: 0.25rem;
+
+    &>img {
+      width: 2rem;
+    }
+    &>p {
+      margin-left: 1rem;
+    }
+  }
 }
 
 nav {
   grid-area: nav;
   display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  &>div {
+    display: flex;
+    align-items: center;
+
+    &>img {
+      width: 6rem;
+      padding-right: 1rem;
+    }
+
+    &>div {
+      font-weight: bold;
+      &>p:last-child {
+        font-size: 1.5rem;
+      }
+    }
+
+    margin-right: auto;
+    
+  }
+  ul {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    &>li {
+      background-color: dodgerblue;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      color: white;
+      font-weight: bold;
+    }
+  }
 }
 
 article {
