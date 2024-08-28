@@ -53,13 +53,6 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
-/*
-    8. Create a root stacking context
-  */
-#root,
-#__next {
-	isolation: isolate;
-}
 
 @font-face {
   font-family: "Roboto";
@@ -72,7 +65,12 @@ h6 {
 
 /* Layout */
 
+body {
+  max-height: 100vh;
+}
+
 main {
+  max-height: 100%;
   display: grid;
   grid-template-areas: "aside header"
   "aside nav"
@@ -100,11 +98,25 @@ article {
   grid-area: article;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: max-content 1fr;
   grid-template-areas: "projects announcements" "projects trending";
+  gap: 2rem;
+  padding: 2rem;
+  max-height: 100%;
 
   & #projects{
     grid-area: projects;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    & >div {
+      flex: 1;
+      align-content: space-between;
+      display: grid;      
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(auto-fit, minmax(200px,1fr));
+      gap: 2rem;
+    }
   }
 
   & #announcements {
@@ -112,9 +124,19 @@ article {
   }
 
   & #trending {
+    display: flex;
+    flex-direction: column;
     grid-area: trending;
+    & >div {
+      flex: 1;
+      /* margin-bottom: 2rem; */
+    }
   }
 
+}
+
+p {
+  text-overflow: ellipsis;
 }
 
 
@@ -144,9 +166,9 @@ article {
   background-color: var(--light-background);
 }
 
-#projects .card {
+#projects .card, #announcements>div, #trending>div {
   background-color: white;
-  box-shadow: 5px 5px 10px grey;
+  box-shadow: 5px 5px 10px lightgrey;
   border-radius: 0.5rem;
   border-left: inset var(--accent-2) 0.5rem;
   padding: 1rem;
