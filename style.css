@@ -127,3 +127,27 @@ nav>ul {
 }
 
 /* Styling */
+
+:root {
+  --light-pastel-blue: #CBF3F0;
+  --dark-pastel-blue: #2EC4B6;
+  --light-pastel-orange: #FFBF69;
+  --dark-paster-orange: #FF9F1C;
+}
+
+aside {
+  background-color: var(--dark-pastel-blue);
+  color: white;
+}
+
+article {
+  background-color: var(--light-pastel-blue);
+}
+
+#projects .card {
+  background-color: white;
+  box-shadow: 5px 5px 10px grey;
+  border-radius: 0.5rem;
+  border-left: inset var(--dark-paster-orange) 0.5rem;
+  padding: 1rem;
+}
