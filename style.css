@@ -139,11 +139,11 @@ article {
     & >div {
       display: grid;
       grid-template-rows: repeat(auto-fit, 1fr);
+      border: none;
 
       & >.card {
         border-bottom: solid 2px lightgrey;
-        padding-bottom: 0.5rem;
-        /* margin-bottom: 1rem; */
+        padding: 2rem;
         &>p {
           font-size: 0.75rem;
           color: grey;
@@ -157,8 +157,28 @@ article {
     flex-direction: column;
     grid-area: trending;
     & >div {
+      border: none;
       flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
       /* margin-bottom: 2rem; */
+      &>.trend {
+        flex: 1;
+        display: flex;
+        font-size: 0.85rem;
+        align-items: center;
+        gap: 0.5rem;
+        
+        /* flex-wrap: wrap; */
+        &>img {
+          height: 3rem;
+        }
+        &>.trend-user>p:not(.username-small) {
+          color: grey;
+          text-wrap: none;
+        }
+      }
     }
   }
 
@@ -166,6 +186,7 @@ article {
 
 p {
   text-overflow: ellipsis;
+  text-wrap: none;
 }
 
 
@@ -180,10 +201,10 @@ nav>ul {
 /* Styling */
 
 :root {
-  --light-background: #CBF3F0;
-  --accent-1: #2EC4B6;
+  --light-background: lightcyan;
+  --accent-1: dodgerblue;
   --light-pastel-orange: #FFBF69;
-  --accent-2: #FF9F1C;
+  --accent-2: yellow;
 }
 
 aside {
